@@ -25,3 +25,13 @@ Given the processed and clusterised dataset, "consumption_data_logged_clusters.c
 
 
 ## CAS OF STUDY 2: GEC (Big Catalan Encyclopedia)
+In this case we study the editorial consumption data of logged users for a period of 6 months (May-November 2022). We have approximately 115,000 consumption records and 12 columns/dimensions (date and time of consumption, user id, visited URL, browser...)
+
+### picae_consum_GEC.ipynb
+This jupyter notebook contains the study of the consumption data. In a first stage, we remove those columns (dimensions) that  are either irrelevant or uninformative (contain only one value or are not well informed). This procedure reduces the number of columns to 4, corresponding to the user ID, the visited URL, the timestamp of the visit (YYYY:MM:DD HH:MM:SS) and the day of the week (Monday-Sunday). In a second stage, each of the columns is analyzed in detail by obtaining the main statistics and visualizing the data (for example the probability density function of the visit time of the day). Then the consumption data is clusterized using the K-Prototypes algorithm. A thorough study is performed on the clustering results and the consumption groups found. Finally, the interevent time events (time between consecutive visits for a given user) are also studied.
+
+### picae_users_GEC.ipynb
+This jupyter notebook delves into the study of registered users who have consumed content from Encyclopaedia. A new data-set is created where the rows correspond to each user (2,475 unique users) and the columns represent the number of visits of each user in each consumption cluster (3 clusters) and in each weekday (7 days). Then, a second clustering algorithm is applied to users (DBSCAN) in order to find groups of users with a specific consumption profile. 
+
+
+Each Jupyter Notebook contains a detailed description of the code and of the performed study (including an index).
